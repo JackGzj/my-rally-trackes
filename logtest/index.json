@@ -127,7 +127,7 @@
             "keyword": {
               "type": "keyword"
             }
-          },
+          }
         },
         "namespace-id": {
           "type": "keyword",
