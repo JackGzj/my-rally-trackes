@@ -1,0 +1,31 @@
+{% import "rally.helpers" as rally with context %}
+{
+  "version": 2,
+  "description": "TSF trace logs",
+  "data-url": "/data/esrally/tracetest.json.bz2",
+  "indices": [
+    {
+      "name": "tracetest",
+      "body": "index.json"
+    }
+  ],
+  "corpora": [
+    {
+      "name": "tracetest",
+      "documents": [
+        {
+          "source-file": "tracetest.json.bz2",
+          "document-count": 1466841,
+          "compressed-bytes": 46206765,
+          "uncompressed-bytes": 1209751787
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {{ rally.collect(parts="operations/*.json") }}
+  ],
+  "challenges": [
+    {{ rally.collect(parts="challenges/*.json") }}
+  ]
+}
