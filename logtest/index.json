@@ -6,69 +6,11 @@
     "index.requests.cache.enable": false
   },
   "mappings": {
-    "_default_": {
-      "_all": {
-        "enabled": false
+    "type": {
+      "dynamic": "strict",
+      "_source": {
+        "enabled": {{ source_enabled | default(true) | tojson }}
       },
-      "_field_names": {
-        "enabled": false
-      },
-      "dynamic_templates": [
-        {
-          "message": {
-            "match": "message",
-            "mapping": {
-              "fields": {
-                "keyword": {
-                  "type": "keyword"
-                }
-              },
-              "type": "text"
-            }
-          }
-        },
-        {
-          "strings": {
-            "match_mapping_type": "string",
-            "mapping": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        }
-      ]
-    },
-    "log": {
-      "_all": {
-        "enabled": false
-      },
-      "_field_names": {
-        "enabled": false
-      },
-      "dynamic_templates": [
-        {
-          "message": {
-            "match": "message",
-            "mapping": {
-              "fields": {
-                "keyword": {
-                  "type": "keyword"
-                }
-              },
-              "type": "text"
-            }
-          }
-        },
-        {
-          "strings": {
-            "match_mapping_type": "string",
-            "mapping": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        }
-      ],
       "properties": {
         "@timestamp": {
           "type": "date"
