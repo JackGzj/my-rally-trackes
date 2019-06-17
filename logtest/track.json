@@ -1,0 +1,31 @@
+{% import "rally.helpers" as rally with context %}
+{
+  "version": 2,
+  "description": "TSF business log test",
+  "data-url": "/data/esrally/logtest.json.bz2",
+  "indices": [
+    {
+      "name": "logtest",
+      "body": "index.json"
+    }
+  ],
+  "corpora": [
+    {
+      "name": "logtest",
+      "documents": [
+        {
+          "source-file": "logtest.json.bz2",
+          "document-count": 1125199,
+          "compressed-bytes": 46219288,
+          "uncompressed-bytes": 1069880605
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {{ rally.collect(parts="operations/*.json") }}
+  ],
+  "challenges": [
+    {{ rally.collect(parts="challenges/*.json") }}
+  ]
+}

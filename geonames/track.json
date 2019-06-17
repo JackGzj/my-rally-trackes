@@ -1,0 +1,32 @@
+{% import "rally.helpers" as rally with context %}
+{
+  "version": 2,
+  "description": "POIs from Geonames",
+  "data-url": "/data/esdata/geonames/documents-2.json.bz2",
+  "indices": [
+    {
+      "name": "geonames",
+      "body": "index.json",
+      "types": [ "type" ]
+    }
+  ],
+  "corpora": [
+    {
+      "name": "geonames",
+      "documents": [
+        {
+          "source-file": "documents-2.json.bz2",
+          "document-count": 11396505,
+          "compressed-bytes": 143134483,
+          "uncompressed-bytes": 1579885366
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {{ rally.collect(parts="operations/*.json") }}
+  ],
+  "challenges": [
+    {{ rally.collect(parts="challenges/*.json") }}
+  ]
+}
