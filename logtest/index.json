@@ -18,7 +18,6 @@
           "message": {
             "match": "message",
             "mapping": {
-              "analyzer": "tsf_msg_analyzer",
               "fields": {
                 "keyword": {
                   "type": "keyword"
@@ -51,7 +50,6 @@
           "message": {
             "match": "message",
             "mapping": {
-              "analyzer": "tsf_msg_analyzer",
               "fields": {
                 "keyword": {
                   "type": "keyword"
@@ -130,7 +128,6 @@
               "type": "keyword"
             }
           },
-          "analyzer": "tsf_msg_analyzer"
         },
         "namespace-id": {
           "type": "keyword",
