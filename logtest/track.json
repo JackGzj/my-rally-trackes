@@ -12,12 +12,13 @@
   "corpora": [
     {
       "name": "logtest",
+      "target-type": "log",
       "documents": [
         {
           "source-file": "logtest.json.bz2",
-          "document-count": 1125199,
-          "compressed-bytes": 46219288,
-          "uncompressed-bytes": 1069880605
+          "document-count": 22793010,
+          "compressed-bytes": 92452254,
+          "uncompressed-bytes": 2139761210
         }
       ]
     }
