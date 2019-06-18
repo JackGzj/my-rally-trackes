@@ -12,12 +12,13 @@
   "corpora": [
     {
       "name": "tracetest",
+      "target-type": "log",
       "documents": [
         {
           "source-file": "tracetest.json.bz2",
-          "document-count": 1466841,
-          "compressed-bytes": 46206765,
-          "uncompressed-bytes": 1209751787
+          "document-count": 2933682,
+          "compressed-bytes": 92254493,
+          "uncompressed-bytes": 2269090484
         }
       ]
     }

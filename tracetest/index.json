@@ -87,6 +87,10 @@
           "type": "keyword",
           "ignore_above": 256
         },
+        "kind": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
         "local-ip": {
           "type": "keyword",
           "ignore_above": 256
@@ -96,6 +100,9 @@
             "ipv4": {
               "type": "keyword",
               "ignore_above": 256
+            },
+            "port": {
+              "type": "long"
             },
             "serviceName": {
               "type": "keyword",
@@ -111,13 +118,75 @@
           "type": "keyword",
           "ignore_above": 256
         },
+        "parentId": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "remoteEndpoint": {
+          "properties": {
+            "ipv4": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "port": {
+              "type": "long"
+            },
+            "serviceName": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "shared": {
+          "type": "boolean"
+        },
         "tags": {
           "properties": {
             "class": {
               "type": "keyword",
               "ignore_above": 256
             },
+            "http": {
+              "properties": {
+                "method": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                },
+                "path": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "localInterface": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
             "method": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "mvc": {
+              "properties": {
+                "controller": {
+                  "properties": {
+                    "class": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    },
+                    "method": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "remoteInterface": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "resultStatus": {
               "type": "keyword",
               "ignore_above": 256
             }
