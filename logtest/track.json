@@ -17,8 +17,8 @@
         {
           "source-file": "logtest.json.bz2",
           "document-count": 2250398,
-          "compressed-bytes": 92452254,
-          "uncompressed-bytes": 2139761210
+          "compressed-bytes": 49352489,
+          "uncompressed-bytes": 1083559042
         }
       ]
     }
